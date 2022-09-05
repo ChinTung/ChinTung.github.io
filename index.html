@@ -1,251 +1,228 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Three.js and AR.js - examples</title>
-<link rel=stylesheet href="css/index.css"/>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+button {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+  display: block;
+  width: 200px;
+}
+
+#ap1, #ap2, #ap3, #ap4, #ap5, #ap6, #ap7, #ap8, #ap9, #ap10 {
+    display: none;
+}
+
+.column {
+  float: right;
+  padding: 10px;
+  width: 60%;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.sidebar {
+    float: left;
+    padding: 20px;
+    height: auto;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+button:hover {
+  background-color: #555555;
+  color: white;
+}
+</style>
+
+
+
 </head>
-<body>
 
-<div class="bigTitle">Three.js and AR.js Examples</div>
-<hr>
-The goal of this collection is to provide a set of basic and instructive examples that introduce the various features in the Javascript-based Augmented Reality (AR) library, 
-<a class="toc" href="https://github.com/jeromeetienne/AR.js">AR.js</a>. Advanced <a class="toc" href="https://threejs.org/">three.js</a> examples are also included.
-<br/><br/>
-Viewing the AR examples will require a device with a camera and one or both of the <a class="toc" href="markers/hiro.png">Hiro</a> and <a class="toc" href="markers/kanji.png">Kanji</a> marker patterns (either printed or displayed on a second device).
-<br/><br/>
-Source code hosted at <a class="toc" href="https://github.com/stemkoski/AR-Examples">GitHub</a>.
+<script src="myscripts.js"></script>
 
-<hr/>
+<body class="w3-light-grey">
 
-<div class="fancy">
-<a href="hello-cube.html">
-<img src="images/demo/hello-cube.png" class="superImage" />
-<br/>Basic Cube</a>
-<p class ="superText">A basic scene that superimposes a cube on a Hiro marker.
-</p>
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Adaptive Podcast</b></h1>
+  <p>Select <span class="w3-tag">data</span> you allow the podcast to access</p>
+
+
+
+
+
+
+</header>
+
+<!-- Grid -->
+<div class="row">
+<div class="sidebar">
+
+    <div>
+
+        <button type="button" id="b1" onclick="loc()">Locations</button>
+        <button type="button" id="b2" onclick="photo()">Photo Library</button>
+        <button type="button" id="b3" onclick="photoloc()">Photo location</button>
+        <button type="button" id="b4" onclick="con()">Contacts</button>
+        <button type="button" id="b5" onclick="msg()">Message Threads</button>
+        <button type="button" id="b6" onclick="health()">Health Data</button>
+        <button type="button" id="b7" onclick="med()">Medicine Data</button>
+        <button type="button" id="b8" onclick="purchase()">Purchase Records</button>
+        <button type="button" id="b9" onclick="social()">Social Media</button>
+        <button type="button" id="b10" onclick="calend()">Calendar Event</button>
+ 
+    </div>
+
 </div>
 
-<div class="fancy">
-<a href="custom-patterns.html">
-<img src="images/demo/custom-patterns.png" class="superImage" />
-<br/>Many Cubes</a>
-<p class ="superText">A scene that superimposes different colored cubes on a Hiro, Kanji, and letter markers.
-</p>
+
+
+<div class="column">
+    <div class="card" id="ap1">
+    <div class="container">
+    <p>The next few days in London will be sunny and cool as usual. There will be no rain for the next two days.</p>
+    <audio controls>
+        <source src="01.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    </div>
+    </div>
+    
+
+    <div class="card" id="ap2">
+        <div class="container">
+        <p>We have found a lot of photos of your pet dogs in your photos. We will talk next about some pet facts about autumn.</p>
+        <audio controls>
+            <source src="02.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+        </div>
+    </div>
+
+    <div class="card" id="ap3">
+        <div class="container">
+        <p>Last year today you travelled to Scotland. A year later, do you remember the sights and the memories of Scotland then. Let's talk about the history of Scotland.</p>
+        <audio controls>
+            <source src="03.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+        </div>
+    </div>
+
+    
+          
+    <div class="card" id="ap4">
+        <div class="container">
+        <p>Your address book friend has a birthday coming up. Let’s listen to a great selection of birthday gifts.</p>
+        <audio controls>
+            <source src="05.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+
+    <div class="card"  id="ap5">
+        <div class="container">
+        <p>Have you discussed kitchen items with your friends recently? We'll be talking about a few kitchen items that are both design and practical, and we're sure there's something you'll like.</p>
+        <audio controls>
+            <source src="06.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+
+    <div  class="card" id="ap6">
+        <div class="container">
+        <p>Your exercise level seems to be below the average for your age group. If you can't find a way to get yourself interested in exercise, here are a few tips to get better at moving and enjoying it.</p>
+        <audio controls>
+            <source src="07.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+
+    <div  class="card" id="ap7">
+        <div class="container">
+        <p>Based on your medication records, we've found a relevant update to a recent article published in the Harvard Medicine School for you to listen to.</p>
+        <audio controls>
+            <source src="08.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+
+    <div  class="card" id="ap8">
+        <div class="container">
+        <p>Based on your buying history, you seem to be interested in coffee. The next half hour will be spent introducing the leading brands of coffee machines and coffee beans for an introduction and comparison. We hope our advice will deepen your understanding and help you in your selection.</p>
+        <audio controls>
+            <source src="09.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+
+    <div   class="card" id="ap9">
+        <div class="container">
+        <p>Based on what your friends have posted on social media sites, next we will talk about the history and culture of the city of Paris. The charm of Paris is not only limited to the Eiffel Tower and the Arc de Triomphe, but also hidden in the streets and alleys. The romantic atmosphere of France and the local gastronomy are what attracts travelers and tourists alike.</p>
+        <audio controls>
+            <source src="10.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+    
+    <div  class="card" id="ap10">
+        <div class="container">
+        <p>Find out about your future meals on the calendar. Let's spend the next half hour talking about our interesting experiences of dining in London.</p>
+        <audio controls>
+            <source src="04.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        </div>
+    </div>
+</div>
 </div>
 
-<div class="fancy">
-<a href="smoothed-controls.html">
-<img src="images/demo/hello-cube.png" class="superImage" />
-<br/>Smoothed Controls</a>
-<p class ="superText">The basic scene, recreated using "smoothed controls", which interpolates the marker location from frame to frame at an adjustable rate.
-</p>
 </div>
-
-<div class="fancy">
-<a href="texture.html">
-<img src="images/demo/texture.png" class="superImage" />
-<br/>Image Texture</a>
-<p class ="superText">An image is positioned to cover a Hiro marker.
-</p>
-</div>
-
-<div class="fancy">
-<a href="globe.html">
-<img src="images/demo/globe.png" class="superImage" />
-<br/>Rotating Globe</a>
-<p class ="superText">A rotating globe (illuminated by a point light) is positioned above a Hiro marker.
-</p>
-</div>
-
-<div class="fancy">
-<a href="video.html">
-<img src="images/demo/video.png" class="superImage" />
-<br/>Video Texture</a>
-<p class ="superText">A flat plane, with a video for a texture, is positioned to cover a Hiro marker.
-</p>
-</div>
-
-<div class="fancy">
-<a href="shader.html">
-<img src="images/demo/shader.png" class="superImage" />
-<br/>Shader</a>
-<p class ="superText">A flat plane moves up and down above a Hiro marker; position and tint color are controlled by vertex and fragment shaders.
-</p>
-</div>
-
-<div class="fancy">
-<a href="model.html">
-<img src="images/demo/model.png" class="superImage" />
-<br/>Loading 3D Models</a>
-<p class ="superText">A 3D model (obj and mtl files) are loaded and displayed above a Hiro marker.
-</p>
-</div>
-
-<div class="fancy">
-<a href="hole-box.html">
-<img src="images/demo/hole-box.png" class="superImage" />
-<br/>Hole in the Floor (Box)</a>
-<p class ="superText">A "hole in the floor" effect. Uses a box geometry to mask the hidden parts of the hole.
-</p>
-</div>
-
-<div class="fancy">
-<a href="hole-plane.html">
-<img src="images/demo/hole-box.png" class="superImage" />
-<br/>Hole in the Floor (Plane)</a>
-<p class ="superText">Another "hole in the floor" effect, using a plane geometry to mask the hidden parts of the hole.
-</p>
-</div>
-
-<div class="fancy">
-<a href="hole-ring.html">
-<img src="images/demo/hole-ring.png" class="superImage" />
-<br/>Hole in the Floor (Ring)</a>
-<p class ="superText">A cylindrical "hole in the floor" effect, using a ring geometry to mask the hidden parts of the hole.
-</p>
-</div>
-
-<div class="fancy">
-<a href="basic-scene.html" target="_blank">
-<img src="images/demo/basic-scene.png" class="superImage" />
-<br/>Basic Scene</a>
-<p class ="superText"> A basic scene created with only Three.js (no AR), useful for prototyping ideas before adding in AR components. </p>
-</div>
-
-<div class="fancy">
-<a href="water-effect.html" target="_blank">
-<img src="images/demo/water-effect.png" class="superImage" />
-<br/>Water Effect (no AR)</a>
-<p class ="superText"> An animated effect (using shaders) that looks like water flowing 
-out from a central point and being absorbed into the floor. (No AR.)</p>
-</div>
-
-<div class="fancy">
-<a href="water-effect-AR.html" target="_blank">
-<img src="images/demo/water-effect-AR.png" class="superImage" />
-<br/>Water Effect (AR version)</a>
-<p class ="superText"> An animated effect (using shaders) that looks like water flowing 
-out from a cylindrical hole (displayed above a Hiro marker), and being absorbed into the floor. 
-<br/>Video preview <a class="toc" href="https://www.youtube.com/watch?v=3DfcD5APnEU">here</a>. </p>
-</div>
-
-<div class="fancy">
-<a href="keyboard-mesh-move.html" target="_blank">
-<img src="images/demo/mesh-movement.png" class="superImage" />
-<br/>Keyboard-Based Object Movement</a>
-<p class ="superText"> Move a cube around the screen with the keyboard. Controls (<a href="images/movement-controls.png">image</a>): <br>W/A/S/D -- move Forward/Left/Backward/Right (standard), <br>Q/E -- rotate Left/Right, <br>R/F -- move Up/Down (think: <b>R</b>ise/<b>F</b>all), <br>T/G -- tilt Up/Down (think: look at <b>T</b>ower/<b>G</b>round).</p>
-</div>
-
-<div class="fancy">
-<a href="keyboard-camera-move.html" target="_blank">
-<img src="images/demo/camera-movement.png" class="superImage" />
-<br/>Keyboard-Based Camera Movement</a>
-<p class ="superText"> Move a camera around the screen with the keyboard. <br>Uses same controls as Object Movement example. </p>
-</div>
-
-<div class="fancy">
-<a href="portal-half-keyboard-test.html" target="_blank">
-<img src="images/demo/portal-half-keyboard-test.png" class="superImage" />
-<br/>Portal Test</a>
-<p class ="superText"> Creating a "portal to another world" effect. Camera moves using same controls as Object Movement example. Only visible from one side. 
-<br/>Not very robust -- see the following portal examples instead.</p>
-</div>
-
-<div class="fancy">
-<a href="stencil-test.html" target="_blank">
-<img src="images/demo/stencil-test.png" class="superImage" />
-<br/>Stencil Buffer Test</a>
-<p class ="superText"> A simple example that uses layers and the stencil buffer to render part of the scene
-onto a plane in the scene. Camera moves using same controls as Object Movement example. Useful for understanding portal view example. </p>
-</div>
-
-<div class="fancy">
-<a href="clipping-planes.html" target="_blank">
-<img src="images/demo/clipping-planes.png" class="superImage" />
-<br/>Clipping Planes</a>
-<p class ="superText"> A simple example that sets up a clipping plane (aligned with a plane mesh) to limit the volume of the scene that is rendered. Useful for understanding portal view example. </p>
-</div>
-
-<div class="fancy">
-<a href="portal-view.html" target="_blank">
-<img src="images/demo/portal-view.png" class="superImage" />
-<br/>Portal View</a>
-<p class ="superText"> A "portal to another world" effect. Portal visible through both sides. 
-<br/>Camera moves using same controls as Object Movement example; also, press 1, 2, or 3 to see the view from different cameras. 
-<br/>Uses stencil buffer and clipping planes for accurate rendering. 
- </p>
-</div>
-
-<div class="fancy">
-<a href="portal-view-AR.html" target="_blank">
-<img src="images/demo/portal-view-AR.png" class="superImage" />
-<br/>Portal View (AR Version)</a>
-<p class ="superText"> An augmented reality version of the "portal to another world" effect. Portal renders above a Kanji marker.
-<br/>Video preview <a class="toc" href="https://www.youtube.com/watch?v=-gZ3Kv9juYg">here</a>. </p>
-</div>
-
-<div class="fancy">
-<a href="magic-cube.html" target="_blank">
-<img src="images/demo/magic-cube.png" class="superImage" />
-<br/>Magic Cube Effect</a>
-<p class ="superText"> Creates a "magic cube effect" that overlays a cube covered with six AR markers <a class="toc" href="markers/cube.png">in this pattern</a>. 
-<br/>Video preview <a class="toc" href="https://www.youtube.com/watch?v=ZI6oJJFgACM">here</a>. </p>
-</div>
-
-<div class="fancy">
-<a href="globe-multi-marker.html" target="_blank">
-<img src="images/demo/globe-multi-marker.png" class="superImage" />
-<br/>Globe with Multiple Markers</a>
-<p class ="superText"> Similar to the Rotating Globe example: places a globe over a Kanji marker. If Kanji marker is blocked, uses other markers (<a class="toc" href="markers/letterA.png">letter A</a> and <a class="toc" href="markers/letterB.png">letter B</a>) to position the globe. </p>
-</div>
-
-<div class="fancy">
-<a href="refraction.html" target="_blank">
-<img src="images/demo/refraction.png" class="superImage" />
-<br/>Refraction</a>
-<p class ="superText"> Creates a rotating torus knot above a Kanji marker. The surface of the knot refracts the scene behind it.
-<br/>Video preview <a class="toc" href="https://www.youtube.com/watch?v=8-YnBk1LL-8">here</a>. 
-</p>
-</div>
-
-<div class="fancy">
-<a href="shadow.html" target="_blank">
-<img src="images/demo/shadow.png" class="superImage" />
-<br/>Shadow</a>
-<p class ="superText"> Creates a rotating torus knot above a Kanji marker. The knot casts a shadow onto the plane containing the marker. </p>
-</div>
-
-<div class="fancy">
-<a href="shadow-balls.html" target="_blank">
-<img src="images/demo/shadow-balls.png" class="superImage" />
-<br/>Shadow Balls</a>
-<p class ="superText"> Creates four colored bouncing basketballs around a Kanji marker. The balls cast shadows onto the plane containing the marker. </p>
-</div>
-
-<div class="fancy">
-<a href="parabolic-path.html" target="_blank">
-<img src="images/demo/parabolic-path.png" class="superImage" />
-<br/>Parabolic Path</a>
-<p class ="superText"> A basketball launches from a <a class="toc" href="markers/letterA.png">Letter-A</a> marker and falls towards a <a class="toc" href="markers/letterB.png">Letter-B</a> marker, following a parabolic path. The ball casts shadows, and a clipping plane (see above example) is used
-to make the ball disappear into the marker. </p>
-</div>
-
-<!--
-<div class="fancy">
-<a href="screen-hole.html" target="_blank">
-<img src="images/demo/screen-hole.png" class="superImage" />
-<br/>Screen Hole with Multiple Markers</a>
-<p class ="superText"> Simulating a "hole-in-the-wall" effect; uses <a href="markers/kanji-abcd.png">Kanji-ABCD</a> pattern. For simplicity, open <a href="screen-hole-QR.png">this image</a> and scan the QR code with your phone/tablet to be brought directly to the example (idea from Jerome Etienne). </p>
-</div>
--->
-
-<!--
-<div class="fancy">
-<a href="zzzz.html" target="_blank">
-<img src="images/demo/zzzz.png" class="superImage" />
-<br/>zzzz</a>
-<p class ="superText"> ... </p>
-</div>
--->
 
 </body>
 </html>
+
